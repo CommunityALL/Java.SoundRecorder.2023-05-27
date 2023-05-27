@@ -68,6 +68,7 @@ public class JavaSoundRecorder {
             }
             line.stop();
             line.close();
+            recordAudio(milliseconds);
 
             try (InputStream in = new FileInputStream(file)) {
 
@@ -83,8 +84,6 @@ public class JavaSoundRecorder {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
-            recordAudio(milliseconds);
 
         });
         thread.start();
